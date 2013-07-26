@@ -83,6 +83,24 @@ void CloudsVisualSystemEmpty::guiRenderEvent(ofxUIEventArgs &e){
 // geometry should be loaded here
 void CloudsVisualSystemEmpty::selfSetup(){
 
+<<<<<<< Updated upstream
+	if(ofFile::doesFileExist(getVisualSystemDataPath() + "TestVideo/Jer_TestVideo.mov")){
+		getRGBDVideoPlayer().setup(getVisualSystemDataPath() + "TestVideo/Jer_TestVideo.mov",
+								   getVisualSystemDataPath() + "TestVideo/Jer_TestVideo.xml" );
+		
+		getRGBDVideoPlayer().swapAndPlay();
+		
+		for(int i = 0; i < 640; i += 2){
+			for(int j = 0; j < 480; j+=2){
+				simplePointcloud.addVertex(ofVec3f(i,j,0));
+			}
+		}
+		
+		pointcloudShader.load(getVisualSystemDataPath() + "shaders/rgbdcombined");
+		
+	}
+	
+=======
 	loadTestVideo();
     
     for (int i = 0; i < 10; i++) {
@@ -91,7 +109,7 @@ void CloudsVisualSystemEmpty::selfSetup(){
 
 //    debugMesh = true;
 //    bendWings = true;
-	
+>>>>>>> Stashed changes
 	
 //	someImage.loadImage( getVisualSystemDataPath() + "images/someImage.png";
 	
@@ -127,16 +145,20 @@ void CloudsVisualSystemEmpty::selfUpdate()\
 
 // selfDraw draws in 3D using the default ofEasyCamera
 // you can change the camera by returning getCameraRef()
-void CloudsVisualSystemEmpty::selfDraw()
-{	
-//	ofPushMatrix();
-//	setupRGBDTransforms();
-//	pointcloudShader.begin();
-//	getRGBDVideoPlayer().setupProjectionUniforms(pointcloudShader);
-//	simplePointcloud.drawVertices();
-//	pointcloudShader.end();
-//	ofPopMatrix();
+<<<<<<< Updated upstream
+void CloudsVisualSystemEmpty::selfDraw(){
 	
+	ofPushMatrix();
+	setupRGBDTransforms();
+	pointcloudShader.begin();
+	getRGBDVideoPlayer().setupProjectionUniforms(pointcloudShader);
+	simplePointcloud.drawVertices();
+	pointcloudShader.end();
+	ofPopMatrix();
+	
+=======
+void CloudsVisualSystemEmpty::selfDraw()
+{
     glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, 1);
     
     for (int i = 0; i < pages.size(); i++) {
@@ -149,6 +171,7 @@ void CloudsVisualSystemEmpty::selfDraw()
         pages[i]->meshDraw();
         pages[i]->postDraw();
     }
+>>>>>>> Stashed changes
 }
 
 // draw any debug stuff here

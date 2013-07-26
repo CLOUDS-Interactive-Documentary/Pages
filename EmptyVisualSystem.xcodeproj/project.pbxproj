@@ -84,6 +84,7 @@
 		644DD80417A2072B009950CB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644DD80117A2072B009950CB /* AVFoundation.framework */; };
 		644DD80517A2072B009950CB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644DD80217A2072B009950CB /* CoreMedia.framework */; };
 		644DD80617A2072B009950CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644DD80317A2072B009950CB /* QuartzCore.framework */; };
+		644DD82D17A304F7009950CB /* Page.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 644DD82B17A304F7009950CB /* Page.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -382,6 +383,8 @@
 		644DD80117A2072B009950CB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = /System/Library/Frameworks/AVFoundation.framework; sourceTree = "<absolute>"; };
 		644DD80217A2072B009950CB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = /System/Library/Frameworks/CoreMedia.framework; sourceTree = "<absolute>"; };
 		644DD80317A2072B009950CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		644DD82B17A304F7009950CB /* Page.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Page.cpp; sourceTree = "<group>"; };
+		644DD82C17A304F7009950CB /* Page.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Page.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -812,6 +815,8 @@
 			children = (
 				3DA460BB179EC5C2002EC0AC /* CloudsVisualSystemEmpty.h */,
 				3DA460BA179EC5C2002EC0AC /* CloudsVisualSystemEmpty.cpp */,
+				644DD82C17A304F7009950CB /* Page.h */,
+				644DD82B17A304F7009950CB /* Page.cpp */,
 			);
 			path = vs_src;
 			sourceTree = SOURCE_ROOT;
@@ -1283,6 +1288,7 @@
 				E7D26E5C17A2F0CF00652876 /* CloudsRGBDCamera.cpp in Sources */,
 				E7D26E6217A31C0D00652876 /* rgbdcombined.frag in Sources */,
 				E7D26E6317A31C0D00652876 /* rgbdcombined.vert in Sources */,
+				644DD82D17A304F7009950CB /* Page.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

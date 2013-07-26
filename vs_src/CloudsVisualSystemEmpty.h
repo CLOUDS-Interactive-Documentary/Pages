@@ -12,6 +12,8 @@
 
 #include "CloudsVisualSystem.h"
 
+#include "Page.h"
+
 //TODO: rename this to your own visual system
 class CloudsVisualSystemEmpty : public CloudsVisualSystem {
   public:
@@ -90,6 +92,7 @@ class CloudsVisualSystemEmpty : public CloudsVisualSystem {
     void selfMousePressed(ofMouseEventArgs& data);
     void selfMouseReleased(ofMouseEventArgs& data);
 	
+    void addPage();
 
     // if you use a custom camera to fly through the scene
 	// you must implement this method for the transitions to work properly
@@ -106,6 +109,7 @@ protected:
     
     //  Your Stuff
     //
+    vector<Page *> pages;
 	
 	ofxUISuperCanvas* customGui;
 	bool customToggle;
