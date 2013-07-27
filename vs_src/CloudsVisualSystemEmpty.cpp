@@ -18,7 +18,14 @@ void CloudsVisualSystemEmpty::selfSetupGui()
 	customGui->copyCanvasProperties(gui);
 	customGui->setName("Page");
 	customGui->setWidgetFontSize(OFX_UI_FONT_SMALL);
+    
+    customGui->addSpacer();
+    
+    numPages = 1;
+    customGui->addSlider("Num Pages", 0, 20, numPages);
 	   
+    customGui->addSpacer();
+    
 	customGui->addSlider("Fill Alpha", 0, 1, &fillAlpha);
 	customGui->addSlider("Mesh Alpha", 0, 1, &meshAlpha);
 
@@ -55,9 +62,10 @@ void CloudsVisualSystemEmpty::selfSetupGui()
 	guimap[customGui->getName()] = customGui;
 }
 
-void CloudsVisualSystemEmpty::selfGuiEvent(ofxUIEventArgs &e){
-	if(e.widget->getName() == "Custom Button"){
-		cout << "Button pressed!" << endl;
+void CloudsVisualSystemEmpty::selfGuiEvent(ofxUIEventArgs &e)
+{
+	if (e.widget->getName().compare("Num Pages") == 0) {
+        numPages = ((ofxUISlider *)e.widget)->getScaledValue();
 	}
 }
 
@@ -81,18 +89,10 @@ void CloudsVisualSystemEmpty::guiRenderEvent(ofxUIEventArgs &e){
 // selfSetup is called when the visual system is first instantiated
 // This will be called during a "loading" screen, so any big images or
 // geometry should be loaded here
-void CloudsVisualSystemEmpty::selfSetup(){
-
-	loadTestVideo();
+void CloudsVisualSystemEmpty::selfSetup()
+{
+//	loadTestVideo();
     
-    for (int i = 0; i < 10; i++) {
-        addPage();
-    }
-
-//    debugMesh = true;
-//    bendWings = true;
-	
-	
 //	someImage.loadImage( getVisualSystemDataPath() + "images/someImage.png";
 	
 }
@@ -118,8 +118,21 @@ void CloudsVisualSystemEmpty::selfSceneTransformation(){
 }
 
 //normal update call
-void CloudsVisualSystemEmpty::selfUpdate()\
+void CloudsVisualSystemEmpty::selfUpdate()
 {
+    // add pages
+    while (pages.size() < numPages) {
+        Page * page = new Page();
+        page->rainSpeed.set(ofRandom(-2, -5), -1 * ofRandom(2, 10), ofRandom(10));
+        pages.push_back(page);
+    }
+
+    // remove pages
+    while (pages.size() > numPages) {
+        delete pages.back();
+        pages.pop_back();
+    }
+    
     for (int i = 0; i < pages.size(); i++) {
         pages[i]->update();
     }
@@ -168,13 +181,17 @@ void CloudsVisualSystemEmpty::selfDrawBackground(){
 	//bClearBackground = false;
 	
 }
+
 // this is called when your system is no longer drawing.
 // Right after this selfUpdate() and selfDraw() won't be called any more
-void CloudsVisualSystemEmpty::selfEnd(){
-	
-	simplePointcloud.clear();
-	
+void CloudsVisualSystemEmpty::selfEnd()
+{
+    for (int i = 0; i <  pages.size(); i++) {
+        delete pages[i];
+    }
+    pages.clear();
 }
+
 // this is called when you should clear all the memory and delet anything you made in setup
 void CloudsVisualSystemEmpty::selfExit(){
 	
@@ -203,12 +220,4 @@ void CloudsVisualSystemEmpty::selfMousePressed(ofMouseEventArgs& data){
 
 void CloudsVisualSystemEmpty::selfMouseReleased(ofMouseEventArgs& data){
 	
-}
-
-void CloudsVisualSystemEmpty::addPage()
-{
-    Page * page = new Page();
-    page->rainSpeed.set(ofRandom(-2, -5), -1 * ofRandom(2, 10), ofRandom(10));
-    
-    pages.push_back(page);
 }

@@ -22,7 +22,7 @@ class CloudsVisualSystemEmpty : public CloudsVisualSystem {
 	//This determines your data path so name it at first!
 	//ie getVisualSystemDataPath() uses this
     string getSystemName(){
-		return "EmptySystem";
+		return "Pages";
 	}
 
 	//These methods let us add custom GUI parameters and respond to their events
@@ -92,18 +92,11 @@ class CloudsVisualSystemEmpty : public CloudsVisualSystem {
     void selfMousePressed(ofMouseEventArgs& data);
     void selfMouseReleased(ofMouseEventArgs& data);
 	
-    void addPage();
-
     // if you use a custom camera to fly through the scene
 	// you must implement this method for the transitions to work properly
 //	ofCamera& getCameraRef(){
-//		return myCustomCamera;
+//		return cloudsCamera;
 //	}
-
-	//
-	ofCamera& getCameraRef(){
-		return cloudsCamera;
-	}
 
 protected:
     
@@ -112,9 +105,7 @@ protected:
     vector<Page *> pages;
 	
 	ofxUISuperCanvas* customGui;
-	bool customToggle;
-	float customFloat1;
-	float customFloat2;
+    int numPages;
 	
 	ofImage someImage;
 	ofShader pointcloudShader;
