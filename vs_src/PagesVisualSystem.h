@@ -14,8 +14,8 @@
 
 #include "Page.h"
 
-//TODO: rename this to your own visual system
-class CloudsVisualSystemEmpty : public CloudsVisualSystem {
+class PagesVisualSystem : public CloudsVisualSystem
+{
   public:
     
 	//TODO: Change this to the name of your visual system
