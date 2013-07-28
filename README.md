@@ -1,3 +1,14 @@
+# Review Notes
+
+Debug mesh view doesn't really work. The untrained eye won't know what it is.  Either add more data (bounding box, direction vector, ...) or drop it.
+
+Things to try:
+
+* White / off white background.
+* Give the user controls over the page parameters.
+* Relate to the documentary as a story. Maybe add text that relates to the last viewed clip or CLOUDS as a whole.
+* Slow it down, make it more playful.
+
 # Empty Visual System 
 
 Welcome to the CLOUDS Interactive Documentary CodeStorm! We'll be creating Visual Systems, modular visual sketches used that are used along with the pointcloud interviews to illustrate the concepts presented in the film.
