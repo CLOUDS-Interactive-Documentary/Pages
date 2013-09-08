@@ -4,14 +4,6 @@
     <SliderCurves>
         <Mapping>
             <Widget>
-                <WidgetName>Offset</WidgetName>
-                <WidgetID>11</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
                 <WidgetName>Twirl</WidgetName>
                 <WidgetID>16</WidgetID>
                 <WidgetCanvasParent>Page</WidgetCanvasParent>
@@ -28,8 +20,32 @@
         </Mapping>
         <Mapping>
             <Widget>
+                <WidgetName>Flip</WidgetName>
+                <WidgetID>20</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
                 <WidgetName>Sway</WidgetName>
                 <WidgetID>22</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>Top Bend</WidgetName>
+                <WidgetID>31</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>Bottom Bend</WidgetName>
+                <WidgetID>33</WidgetID>
                 <WidgetCanvasParent>Page</WidgetCanvasParent>
             </Widget>
             <Track></Track>
@@ -46,6 +62,14 @@
             <Widget>
                 <WidgetName>Speed</WidgetName>
                 <WidgetID>38</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>Offset</WidgetName>
+                <WidgetID>11</WidgetID>
                 <WidgetCanvasParent>Page</WidgetCanvasParent>
             </Widget>
             <Track></Track>
