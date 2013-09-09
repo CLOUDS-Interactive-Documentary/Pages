@@ -26,8 +26,8 @@ void PagesVisualSystem::selfSetupGui()
 	   
     customGui->addSpacer();
     
-	customGui->addSlider("Fill Alpha", 0, 1, &fillAlpha);
-	customGui->addSlider("Mesh Alpha", 0, 1, &meshAlpha);
+	customGui->addSlider("FILL ALPHA", 0, 1, &fillAlpha);
+	customGui->addSlider("MESH ALPHA", 0, 1, &meshAlpha);
 
     customGui->addSpacer();
 
