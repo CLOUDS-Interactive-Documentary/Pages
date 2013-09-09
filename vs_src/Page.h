@@ -60,7 +60,10 @@ class Page
         void preDraw();
         void fillDraw();
         void meshDraw();
+        void stringDraw(string text, float x, float y, float z);
         void postDraw();
+    
+        ofPoint boundsMin, boundsMax;
 
         static float sharedFlipAngle;
         static int sharedLastFlipFrame;

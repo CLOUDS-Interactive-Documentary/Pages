@@ -8,6 +8,8 @@
 
 #include "Page.h"
 
+#include "ofBitmapFont.h"
+
 float fillAlpha = 1.0;
 float meshAlpha = 0.0;
 float offsetAmount = 0.0;
@@ -135,6 +137,9 @@ void Page::rebuild(float bendTopPct, float bendBottomPct)
 //--------------------------------------------------------------
 void Page::remesh(enum PageOverwriteMode mode)
 {
+    boundsMin.set(FLT_MAX, FLT_MAX, FLT_MAX);
+    boundsMax.set(FLT_MIN, FLT_MIN, FLT_MIN);
+    
     mesh = path.getTessellation();
 
     // add a bunch of dummy normals
@@ -166,6 +171,14 @@ void Page::remesh(enum PageOverwriteMode mode)
             if (mesh.getNormal(mesh.getIndex(i + 1)).length() == 0) mesh.setNormal(mesh.getIndex(i + 1), n);
             if (mesh.getNormal(mesh.getIndex(i + 2)).length() == 0) mesh.setNormal(mesh.getIndex(i + 2), n);
         }
+        
+        // set the bounds
+        boundsMin.x = MIN(boundsMin.x, MIN(a.x, MIN(b.x, c.x)));
+        boundsMax.x = MAX(boundsMax.x, MAX(a.x, MAX(b.x, c.x)));
+        boundsMin.y = MIN(boundsMin.y, MIN(a.y, MIN(b.y, c.y)));
+        boundsMax.y = MAX(boundsMax.y, MAX(a.y, MAX(b.y, c.y)));
+        boundsMin.z = MIN(boundsMin.z, MIN(a.z, MIN(b.z, c.z)));
+        boundsMax.z = MAX(boundsMax.z, MAX(a.z, MAX(b.z, c.z)));
     }
 }
 
@@ -353,17 +366,170 @@ void Page::fillDraw()
 void Page::meshDraw()
 {
     if (meshAlpha > 0.0) {
-        ofSetColor(255, meshAlpha * 255);
+        float scaledAlpha = meshAlpha * 255;
+        
+        // mesh
+        ofSetColor(128, scaledAlpha);
         mesh.drawWireframe();
         
-        ofSetColor(255, 0, 0, meshAlpha * 255);
+        // normals
         for (int i=0; i < mesh.getNumIndices(); i++) {
             ofVec3f coord = mesh.getVertex(mesh.getIndex(i));
             ofVec3f norm = mesh.getNormal(mesh.getIndex(i));
             
-            ofLine(coord, coord + (norm * 10));
+            ofSetColor(255, 0, 255, scaledAlpha);
+            ofLine(coord, coord + (norm * 5));
+            ofSetColor(255, 255, 0, scaledAlpha);
+            ofPushMatrix();
+            ofTranslate(coord);
+            ofRotate(90, 0, 1, 0);
+            ofCircle(0, 0, 0, 0.1);
+            ofPopMatrix();
         }
+        
+        // bounding box
+        ofSetColor(0, 255, 255, scaledAlpha);
+        ofLine(boundsMin.x, boundsMin.y, boundsMin.z, boundsMin.x, boundsMin.y, boundsMax.z);
+        ofLine(boundsMin.x, boundsMin.y, boundsMax.z, boundsMax.x, boundsMin.y, boundsMax.z);
+        ofLine(boundsMax.x, boundsMin.y, boundsMax.z, boundsMax.x, boundsMax.y, boundsMax.z);
+        ofLine(boundsMax.x, boundsMax.y, boundsMax.z, boundsMax.x, boundsMax.y, boundsMin.z);
+        ofLine(boundsMax.x, boundsMax.y, boundsMin.z, boundsMin.x, boundsMax.y, boundsMin.z);
+        ofLine(boundsMin.x, boundsMax.y, boundsMin.z, boundsMin.x, boundsMin.y, boundsMin.z);
+        ofLine(boundsMin.x, boundsMin.y, boundsMin.z, boundsMax.x, boundsMin.y, boundsMin.z);
+        ofLine(boundsMax.x, boundsMin.y, boundsMin.z, boundsMax.x, boundsMin.y, boundsMax.z);
+        ofLine(boundsMax.x, boundsMax.y, boundsMin.z, boundsMax.x, boundsMin.y, boundsMin.z);
+        ofLine(boundsMin.x, boundsMax.y, boundsMax.z, boundsMin.x, boundsMin.y, boundsMax.z);
+        ofLine(boundsMin.x, boundsMax.y, boundsMin.z, boundsMin.x, boundsMax.y, boundsMax.z);
+        ofLine(boundsMin.x, boundsMax.y, boundsMax.z, boundsMax.x, boundsMax.y, boundsMax.z);
+        
+        // min and max coords
+        ofSetColor(255, scaledAlpha);
+        stringDraw("(" + ofToString(boundsMin.x, 3) + ", " + ofToString(boundsMin.y, 3) + ", " + ofToString(boundsMin.z, 3) + ")", boundsMin.x, boundsMin.y, boundsMin.z);
+        stringDraw("(" + ofToString(boundsMax.x, 3) + ", " + ofToString(boundsMin.y, 3) + ", " + ofToString(boundsMin.z, 3) + ")", boundsMax.x, boundsMin.y, boundsMin.z);
+        stringDraw("(" + ofToString(boundsMin.x, 3) + ", " + ofToString(boundsMax.y, 3) + ", " + ofToString(boundsMin.z, 3) + ")", boundsMin.x, boundsMax.y, boundsMin.z);
+        stringDraw("(" + ofToString(boundsMin.x, 3) + ", " + ofToString(boundsMin.y, 3) + ", " + ofToString(boundsMax.z, 3) + ")", boundsMin.x, boundsMin.y, boundsMax.z);
+        stringDraw("(" + ofToString(boundsMax.x, 3) + ", " + ofToString(boundsMax.y, 3) + ", " + ofToString(boundsMin.z, 3) + ")", boundsMax.x, boundsMax.y, boundsMin.z);
+        stringDraw("(" + ofToString(boundsMax.x, 3) + ", " + ofToString(boundsMin.y, 3) + ", " + ofToString(boundsMax.z, 3) + ")", boundsMax.x, boundsMin.y, boundsMax.z);
+        stringDraw("(" + ofToString(boundsMin.x, 3) + ", " + ofToString(boundsMax.y, 3) + ", " + ofToString(boundsMax.z, 3) + ")", boundsMin.x, boundsMax.y, boundsMax.z);
+        stringDraw("(" + ofToString(boundsMax.x, 3) + ", " + ofToString(boundsMax.y, 3) + ", " + ofToString(boundsMax.z, 3) + ")", boundsMax.x, boundsMax.y, boundsMax.z);
+        
+        // axis
+        ofSetColor(255, 0, 0, scaledAlpha);
+        ofLine(0, 0, 0, 10, 0, 0);
+        ofSetColor(0, 255, 0, scaledAlpha);
+        ofLine(0, 0, 0, 0, 10, 0);
+        ofSetColor(0, 0, 255, scaledAlpha);
+        ofLine(0, 0, 0, 0, 0, 10);
     }
+}
+
+//--------------------------------------------------------------
+// Adapted from ofGLRenderer::drawString(string textString, float x, float y, float z, ofDrawBitmapMode mode)
+void Page::stringDraw(string text, float x, float y, float z)
+{
+	// this is copied from the ofTrueTypeFont
+	//GLboolean blend_enabled = glIsEnabled(GL_BLEND); //TODO: this is not used?
+	GLint blend_src, blend_dst;
+	glGetIntegerv( GL_BLEND_SRC, &blend_src );
+	glGetIntegerv( GL_BLEND_DST, &blend_dst );
+    
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+	int len = (int)text.length();
+	//float yOffset = 0;
+	float fontSize = 8.0f;
+	bool bOrigin = false;
+    
+	float sx = 0;
+	float sy = -fontSize;
+    
+	///////////////////////////
+	// APPLY TRANSFORM / VIEW
+	///////////////////////////
+	//
+    
+	bool hasModelView = false;
+	bool hasProjection = false;
+	bool hasViewport = false;
+    
+	ofRectangle rViewport;
+	
+    //our aim here is to draw to screen
+    //at the viewport position related
+    //to the world position x,y,z
+    
+    //gluProject method
+    GLdouble modelview[16], projection[16];
+    GLint view[4];
+    double dScreenX, dScreenY, dScreenZ;
+    glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
+    glGetDoublev(GL_PROJECTION_MATRIX, projection);
+    glGetIntegerv(GL_VIEWPORT, view);
+    view[0] = 0; view[1] = 0; //we're already drawing within viewport
+    gluProject(x, y, z, modelview, projection, view, &dScreenX, &dScreenY, &dScreenZ);
+    
+    if (dScreenZ >= 1)
+        return;
+    
+    rViewport = ofGetCurrentViewport();
+    
+    hasProjection = true;
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    glLoadIdentity();
+    
+    hasModelView = true;
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+    
+    glTranslatef(-1, -1, 0);
+    glScalef(2/rViewport.width, 2/rViewport.height, 1);
+    
+    glTranslatef(dScreenX, dScreenY, 0);
+    
+    // EZ: Make sure to flip here.
+    glScalef(1, -1, 1);
+    
+	// (c) enable texture once before we start drawing each char (no point turning it on and off constantly)
+	//We do this because its way faster
+	ofDrawBitmapCharacterStart(text.size());
+    
+	for(int c = 0; c < len; c++){
+		if(text[c] == '\n'){
+            
+			sy += bOrigin ? -1 : 1 * (fontSize*1.7);
+			sx = 0;
+            
+			//glRasterPos2f(x,y + (int)yOffset);
+		} else if (text[c] >= 32){
+			// < 32 = control characters - don't draw
+			// solves a bug with control characters
+			// getting drawn when they ought to not be
+			ofDrawBitmapCharacter(text[c], (int)sx, (int)sy);
+            
+			sx += fontSize;
+		}
+	}
+	//We do this because its way faster
+	ofDrawBitmapCharacterEnd();
+    
+    
+	if (hasModelView)
+		glPopMatrix();
+    
+	if (hasProjection)
+	{
+		glMatrixMode(GL_PROJECTION);
+		glPopMatrix();
+		glMatrixMode(GL_MODELVIEW);
+	}
+    
+	if (hasViewport)
+		ofPopView();
+    
+	glBlendFunc(blend_src, blend_dst);
 }
 
 //--------------------------------------------------------------
