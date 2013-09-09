@@ -4,71 +4,7 @@
     <SliderCurves>
         <Mapping>
             <Widget>
-                <WidgetName>Twirl</WidgetName>
-                <WidgetID>16</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Tilt</WidgetName>
-                <WidgetID>18</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Flip</WidgetName>
-                <WidgetID>20</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Sway</WidgetName>
-                <WidgetID>22</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Top Bend</WidgetName>
-                <WidgetID>31</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Bottom Bend</WidgetName>
-                <WidgetID>33</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Tornado</WidgetName>
-                <WidgetID>36</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Speed</WidgetName>
-                <WidgetID>38</WidgetID>
-                <WidgetCanvasParent>Page</WidgetCanvasParent>
-            </Widget>
-            <Track></Track>
-        </Mapping>
-        <Mapping>
-            <Widget>
-                <WidgetName>Offset</WidgetName>
+                <WidgetName>OFFSET</WidgetName>
                 <WidgetID>11</WidgetID>
                 <WidgetCanvasParent>Page</WidgetCanvasParent>
             </Widget>
@@ -76,7 +12,71 @@
         </Mapping>
         <Mapping>
             <Widget>
-                <WidgetName>Num Pages</WidgetName>
+                <WidgetName>TWIRL</WidgetName>
+                <WidgetID>16</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>TILT</WidgetName>
+                <WidgetID>18</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>FLIP</WidgetName>
+                <WidgetID>20</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>SWAY</WidgetName>
+                <WidgetID>22</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>TOP BEND</WidgetName>
+                <WidgetID>31</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>BOTTOM BEND</WidgetName>
+                <WidgetID>33</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>TORNADO</WidgetName>
+                <WidgetID>36</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>SPEED</WidgetName>
+                <WidgetID>38</WidgetID>
+                <WidgetCanvasParent>Page</WidgetCanvasParent>
+            </Widget>
+            <Track></Track>
+        </Mapping>
+        <Mapping>
+            <Widget>
+                <WidgetName>NUM PAGES</WidgetName>
                 <WidgetID>3</WidgetID>
                 <WidgetCanvasParent>Page</WidgetCanvasParent>
             </Widget>
@@ -84,7 +84,7 @@
         </Mapping>
         <Mapping>
             <Widget>
-                <WidgetName>Fill Alpha</WidgetName>
+                <WidgetName>FILL ALPHA</WidgetName>
                 <WidgetID>6</WidgetID>
                 <WidgetCanvasParent>Page</WidgetCanvasParent>
             </Widget>
@@ -92,7 +92,7 @@
         </Mapping>
         <Mapping>
             <Widget>
-                <WidgetName>Mesh Alpha</WidgetName>
+                <WidgetName>MESH ALPHA</WidgetName>
                 <WidgetID>8</WidgetID>
                 <WidgetCanvasParent>Page</WidgetCanvasParent>
             </Widget>
