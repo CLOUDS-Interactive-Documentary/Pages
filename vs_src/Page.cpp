@@ -416,10 +416,13 @@ void Page::meshDraw()
         // axis
         ofSetColor(255, 0, 0, scaledAlpha);
         ofLine(0, 0, 0, 10, 0, 0);
+        stringDraw("x", 11, 0, 0);
         ofSetColor(0, 255, 0, scaledAlpha);
         ofLine(0, 0, 0, 0, 10, 0);
+        stringDraw("y", 0, 11, 0);
         ofSetColor(0, 0, 255, scaledAlpha);
         ofLine(0, 0, 0, 0, 0, 10);
+        stringDraw("z", 0, 0, 11);
     }
 }
 
