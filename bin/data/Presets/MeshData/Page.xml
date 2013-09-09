@@ -7,91 +7,91 @@
 </Canvas>
 <Widget>
     <Kind>4</Kind>
-    <Name>Num Pages</Name>
-    <Value>10.500000000</Value>
+    <Name>NUM PAGES</Name>
+    <Value>1.199999928</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>FILL ALPHA</Name>
-    <Value>1.000000000</Value>
+    <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
     <Name>MESH ALPHA</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>OFFSET</Name>
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Offset</Name>
+    <Name>ALIGN</Name>
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Align</Name>
-    <Value>0.000000000</Value>
-</Widget>
-<Widget>
-    <Kind>4</Kind>
-    <Name>Twirl</Name>
+    <Name>TWIRL</Name>
     <Value>0.068965517</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Tilt</Name>
+    <Name>TILT</Name>
     <Value>0.078817733</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Flip</Name>
+    <Name>FLIP</Name>
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Sway</Name>
+    <Name>SWAY</Name>
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>Bend Tail</Name>
+    <Name>BEND TAIL</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>Bend Wings</Name>
+    <Name>BEND WINGS</Name>
     <Value>1</Value>
 </Widget>
 <Widget>
     <Kind>2</Kind>
-    <Name>Bend Fresh</Name>
+    <Name>BEND FRESH</Name>
     <Value>0</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Top Bend</Name>
+    <Name>TOP BEND</Name>
     <Value>0.750000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Bottom Bend</Name>
+    <Name>BOTTOM BEND</Name>
     <Value>0.750000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Tornado</Name>
+    <Name>TORNADO</Name>
     <Value>0.000000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Speed</Name>
+    <Name>SPEED</Name>
     <Value>0.500000000</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Expand</Name>
+    <Name>EXPAND</Name>
     <Value>0.433497548</Value>
 </Widget>
 <Widget>
     <Kind>4</Kind>
-    <Name>Lift</Name>
+    <Name>LIFT</Name>
     <Value>0.546798050</Value>
 </Widget>
