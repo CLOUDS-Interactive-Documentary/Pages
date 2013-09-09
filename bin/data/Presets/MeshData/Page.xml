@@ -1,0 +1,97 @@
+<Canvas>
+    <Kind>42</Kind>
+    <Name>Page</Name>
+    <IsMinified>0</IsMinified>
+    <XPosition>1.000000000</XPosition>
+    <YPosition>1.000000000</YPosition>
+</Canvas>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Num Pages</Name>
+    <Value>10.500000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Fill Alpha</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Mesh Alpha</Name>
+    <Value>1.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Offset</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Align</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Twirl</Name>
+    <Value>0.068965517</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Tilt</Name>
+    <Value>0.078817733</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Flip</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Sway</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Bend Tail</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Bend Wings</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>Bend Fresh</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Top Bend</Name>
+    <Value>0.750000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Bottom Bend</Name>
+    <Value>0.750000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Tornado</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Speed</Name>
+    <Value>0.500000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Expand</Name>
+    <Value>0.433497548</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>Lift</Name>
+    <Value>0.546798050</Value>
+</Widget>
