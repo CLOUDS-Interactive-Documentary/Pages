@@ -22,7 +22,7 @@ void PagesVisualSystem::selfSetupGui()
     customGui->addSpacer();
     
     numPages = 1;
-    customGui->addSlider("Num Pages", 0, 20, numPages);
+    customGui->addSlider("NUM PAGES", 0, 20, numPages);
 	   
     customGui->addSpacer();
     
@@ -31,30 +31,30 @@ void PagesVisualSystem::selfSetupGui()
 
     customGui->addSpacer();
 
-    customGui->addSlider("Offset", 0, 1, &offsetAmount);
-	customGui->addSlider("Align", 0, 1, &alignAmount);
+    customGui->addSlider("OFFSET", 0, 1, &offsetAmount);
+	customGui->addSlider("ALIGN", 0, 1, &alignAmount);
     
     customGui->addSpacer();
     
-    customGui->addSlider("Twirl", 0, 1, &twirlAmount);
-	customGui->addSlider("Tilt", 0, 1, &tiltAmount);
-    customGui->addSlider("Flip", 0, 1, &flipAmount);
-	customGui->addSlider("Sway", 0, 1, &swayAmount);
+    customGui->addSlider("TWIRL", 0, 1, &twirlAmount);
+	customGui->addSlider("TILT", 0, 1, &tiltAmount);
+    customGui->addSlider("FLIP", 0, 1, &flipAmount);
+	customGui->addSlider("SWAY", 0, 1, &swayAmount);
     
     customGui->addSpacer();
     
-	customGui->addToggle("Bend Tail", &bendTail);
-    customGui->addToggle("Bend Wings", &bendWings);
-	customGui->addToggle("Bend Fresh", &bendFresh);
-    customGui->addSlider("Top Bend", 0, 1, &topBendAmount);
-	customGui->addSlider("Bottom Bend", 0, 1, &bottomBendAmount);
+	customGui->addToggle("BEND TAIL", &bendTail);
+    customGui->addToggle("BEND WINGS", &bendWings);
+	customGui->addToggle("BEND FRESH", &bendFresh);
+    customGui->addSlider("TOP BEND", 0, 1, &topBendAmount);
+	customGui->addSlider("BOTTOM BEND", 0, 1, &bottomBendAmount);
     
     customGui->addSpacer();
 
-    customGui->addSlider("Tornado", 0, 1, &tornadoAmount);
-	customGui->addSlider("Speed", 0, 1, &speedAmount);
-    customGui->addSlider("Expand", 0, 1, &expandAmount);
-    customGui->addSlider("Lift", 0, 1, &liftAmount);
+    customGui->addSlider("TORNADO", 0, 1, &tornadoAmount);
+	customGui->addSlider("SPEED", 0, 1, &speedAmount);
+    customGui->addSlider("EXPAND", 0, 1, &expandAmount);
+    customGui->addSlider("LIFT", 0, 1, &liftAmount);
 	
 	ofAddListener(customGui->newGUIEvent, this, &PagesVisualSystem::selfGuiEvent);
 	
@@ -64,7 +64,7 @@ void PagesVisualSystem::selfSetupGui()
 
 void PagesVisualSystem::selfGuiEvent(ofxUIEventArgs &e)
 {
-	if (e.widget->getName().compare("Num Pages") == 0) {
+	if (e.widget->getName().compare("NUM PAGES") == 0) {
         numPages = ((ofxUISlider *)e.widget)->getScaledValue();
 	}
 }
