@@ -91,10 +91,7 @@ void PagesVisualSystem::guiRenderEvent(ofxUIEventArgs &e){
 // geometry should be loaded here
 void PagesVisualSystem::selfSetup()
 {
-//	loadTestVideo();
-    
-//	someImage.loadImage( getVisualSystemDataPath() + "images/someImage.png";
-	
+
 }
 
 // selfPresetLoaded is called whenever a new preset is triggered
@@ -151,7 +148,7 @@ void PagesVisualSystem::selfDraw()
 //	ofPopMatrix();
 	
     glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, 1);
-    
+
     for (int i = 0; i < pages.size(); i++) {
         pages[i]->preDraw();
         ofEnableLighting();
